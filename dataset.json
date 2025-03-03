@@ -44,6 +44,160 @@
     {
         "code": "def is_odd(n):\n    return n % 2 != 0",
         "test_case": "def test_is_odd():\n    assert is_odd(3) == True\n    assert is_odd(8) == False\n    assert is_odd(0) == False"
+    },
+    {
+        "code": "def add(a, b): return a + b",
+        "test_case": "def test_add(): assert add(10, 3) == 13"
+    },
+    {
+        "code": "def multiply(x, y): return x * y",
+        "test_case": "def test_multiply(): assert multiply(45, 4) == 180"
+    },
+    {
+        "code": "def factorial(n): return 1 if n == 0 else n * factorial(n - 1)",
+        "test_case": "def test_factorial():\n    assert factorial(1) == 1\n    assert factorial(2) == 2\n    assert factorial(3) == 6"
+    },
+ 
+    {
+        "code": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True",
+        "test_case": "def test_is_prime():\n    assert is_prime(2) == True\n    assert is_prime(4) == False\n    assert is_prime(13) == True"
+    },
+    {
+        "code": "def fibonacci(n):\n    if n <= 0:\n        return []\n    elif n == 1:\n        return [0]\n    elif n == 2:\n        return [0, 1]\n    seq = [0, 1]\n    for _ in range(2, n):\n        seq.append(seq[-1] + seq[-2])\n    return seq",
+        "test_case": "def test_fibonacci():\n    assert fibonacci(1) == [0]\n    assert fibonacci(5) == [0, 1, 1, 2, 3]\n    assert fibonacci(7) == [0, 1, 1, 2, 3, 5, 8]"
+    },
+    {
+        "code": "def is_palindrome(s):\n    return s == s[::-1]",
+        "test_case": "def test_is_palindrome():\n    assert is_palindrome('racecar') == True\n    assert is_palindrome('hello') == False\n    assert is_palindrome('madam') == True"
+    },
+    {
+        "code": "def are_anagrams(s1, s2):\n    return sorted(s1) == sorted(s2)",
+        "test_case": "def test_are_anagrams():\n    assert are_anagrams('listen', 'silent') == True\n    assert are_anagrams('hello', 'world') == False\n    assert are_anagrams('anagram', 'nagaram') == True"
+    },
+    {
+        "code": "def is_armstrong(n):\n    digits = [int(d) for d in str(n)]\n    return sum(d ** len(digits) for d in digits) == n",
+        "test_case": "def test_is_armstrong():\n    assert is_armstrong(153) == True\n    assert is_armstrong(9474) == True\n    assert is_armstrong(123) == False"
+    },
+    
+    {
+        "code": "def max_in_list(lst):\n    return max(lst) if lst else None",
+        "test_case": "def test_max_in_list():\n    assert max_in_list([1, 3, 2, 8, 5]) == 8\n    assert max_in_list([-1, -5, -3]) == -1\n    assert max_in_list([]) == None"
+    },
+    {
+        "code": "def is_even(n):\n    return n % 2 == 0",
+        "test_case": "def test_is_even():\n    assert is_even(2) == True\n    assert is_even(7) == False\n    assert is_even(0) == True"
+    },
+    {
+        "code": "def is_odd(n):\n    return n % 2 != 0",
+        "test_case": "def test_is_odd():\n    assert is_odd(3) == True\n    assert is_odd(8) == False\n    assert is_odd(0) == False"
+    },
+    {
+        "code": "def reverse_string(s):\n    return s[::-1]",
+        "test_case": "def test_reverse_string():\n    assert reverse_string('hello') == 'olleh'\n    assert reverse_string('world') == 'dlrow'\n    assert reverse_string('') == ''"
+    },
+    {
+        "code": "def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a",
+        "test_case": "def test_gcd():\n    assert gcd(48, 18) == 6\n    assert gcd(101, 103) == 1\n    assert gcd(56, 98) == 14"
+    },
+    {
+        "code": "def lcm(a, b):\n    def gcd(x, y):\n        while y:\n            x, y = y, x % y\n        return x\n    return abs(a * b) // gcd(a, b)",
+        "test_case": "def test_lcm():\n    assert lcm(4, 5) == 20\n    assert lcm(7, 3) == 21\n    assert lcm(10, 15) == 30"
+    },
+    {
+        "code": "def sum_of_digits(n):\n    return sum(int(digit) for digit in str(abs(n)))",
+        "test_case": "def test_sum_of_digits():\n    assert sum_of_digits(123) == 6\n    assert sum_of_digits(-456) == 15\n    assert sum_of_digits(0) == 0"
+    },
+    {
+        "code": "def count_vowels(s):\n    return sum(1 for c in s.lower() if c in 'aeiou')",
+        "test_case": "def test_count_vowels():\n    assert count_vowels('hello') == 2\n    assert count_vowels('world') == 1\n    assert count_vowels('AEIOU') == 5"
+    },
+    {
+        "code": "def find_second_largest(lst):\n    unique_lst = list(set(lst))\n    unique_lst.sort()\n    return unique_lst[-2] if len(unique_lst) > 1 else None",
+        "test_case": "def test_find_second_largest():\n    assert find_second_largest([1, 2, 3, 4, 5]) == 4\n    assert find_second_largest([10, 10, 10]) == None\n    assert find_second_largest([5, 1, 5, 2]) == 2"
+    },
+    {
+        "code": "def is_perfect_square(n):\n    return n >= 0 and int(n ** 0.5) ** 2 == n",
+        "test_case": "def test_is_perfect_square():\n    assert is_perfect_square(4) == True\n    assert is_perfect_square(15) == False\n    assert is_perfect_square(25) == True"
+    },
+    {
+        "code": "def remove_duplicates(lst):\n    return list(dict.fromkeys(lst))",
+        "test_case": "def test_remove_duplicates():\n    assert remove_duplicates([1, 2, 2, 3, 4, 4]) == [1, 2, 3, 4]\n    assert remove_duplicates(['a', 'b', 'a']) == ['a', 'b']\n    assert remove_duplicates([]) == []"
+    },
+    {
+        "code": "def sum_of_squares(n):\n    return sum(i ** 2 for i in range(1, n + 1))",
+        "test_case": "def test_sum_of_squares():\n    assert sum_of_squares(3) == 14\n    assert sum_of_squares(5) == 55\n    assert sum_of_squares(1) == 1"
+    },
+    {
+        "code": "def is_leap_year(year):\n    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)",
+        "test_case": "def test_is_leap_year():\n    assert is_leap_year(2020) == True\n    assert is_leap_year(1900) == False\n    assert is_leap_year(2000) == True"
+    },
+    {
+        "code": "def count_words(s):\n    return len(s.split())",
+        "test_case": "def test_count_words():\n    assert count_words('Hello world') == 2\n    assert count_words('This is a test') == 4\n    assert count_words('') == 0"
+    },
+    {
+        "code": "def square_elements(lst):\n    return [x ** 2 for x in lst]",
+        "test_case": "def test_square_elements():\n    assert square_elements([1, 2, 3]) == [1, 4, 9]\n    assert square_elements([-1, -2]) == [1, 4]\n    assert square_elements([]) == []"
+    },
+    {
+        "code": "def sum_even_numbers(lst):\n    return sum(x for x in lst if x % 2 == 0)",
+        "test_case": "def test_sum_even_numbers():\n    assert sum_even_numbers([1, 2, 3, 4, 5]) == 6\n    assert sum_even_numbers([10, 15, 20]) == 30\n    assert sum_even_numbers([1, 3, 5]) == 0"
+    },
+    {
+        "code": "def swap_case(s):\n    return s.swapcase()",
+        "test_case": "def test_swap_case():\n    assert swap_case('Hello') == 'hELLO'\n    assert swap_case('WORLD') == 'world'\n    assert swap_case('Python3') == 'pYTHON3'"
+    },
+    {
+        "code": "def merge_sorted_lists(lst1, lst2):\n    return sorted(lst1 + lst2)",
+        "test_case": "def test_merge_sorted_lists():\n    assert merge_sorted_lists([1, 3, 5], [2, 4, 6]) == [1, 2, 3, 4, 5, 6]\n    assert merge_sorted_lists([], [1, 2]) == [1, 2]\n    assert merge_sorted_lists([3, 3, 3], [3, 3]) == [3, 3, 3, 3, 3]"
+    },
+    {
+        "code": "def find_longest_word(words):\n    return max(words, key=len) if words else ''",
+        "test_case": "def test_find_longest_word():\n    assert find_longest_word(['apple', 'banana', 'cherry']) == 'banana'\n    assert find_longest_word(['cat', 'dog', 'elephant']) == 'elephant'\n    assert find_longest_word([]) == ''"
+    },
+    {
+        "code": "def is_substring(s, sub):\n    return sub in s",
+        "test_case": "def test_is_substring():\n    assert is_substring('hello world', 'hello') == True\n    assert is_substring('hello world', 'bye') == False\n    assert is_substring('abcdef', 'cd') == True"
+    },
+    {
+        "code": "def count_occurrences(lst, value):\n    return lst.count(value)",
+        "test_case": "def test_count_occurrences():\n    assert count_occurrences([1, 2, 2, 3], 2) == 2\n    assert count_occurrences(['a', 'b', 'a', 'a'], 'a') == 3\n    assert count_occurrences([1, 2, 3], 4) == 0"
+    },
+    {
+        "code": "def capitalize_words(s):\n    return ' '.join(word.capitalize() for word in s.split())",
+        "test_case": "def test_capitalize_words():\n    assert capitalize_words('hello world') == 'Hello World'\n    assert capitalize_words('python programming') == 'Python Programming'\n    assert capitalize_words('') == ''"
+    },
+    {
+        "code": "def common_elements(lst1, lst2):\n    return list(set(lst1) & set(lst2))",
+        "test_case": "def test_common_elements():\n    assert common_elements([1, 2, 3], [2, 3, 4]) == [2, 3]\n    assert common_elements([5, 6, 7], [8, 9]) == []\n    assert common_elements(['a', 'b'], ['b', 'c']) == ['b']"
+    },
+    {
+        "code": "def bubble_sort(arr):\n    n = len(arr)\n    for i in range(n):\n        for j in range(0, n-i-1):\n            if arr[j] > arr[j+1]:\n                arr[j], arr[j+1] = arr[j+1], arr[j]\n    return arr",
+        "test_case": "def test_bubble_sort():\n    assert bubble_sort([64, 34, 25, 12, 22, 11, 90]) == [11, 12, 22, 25, 34, 64, 90]\n    assert bubble_sort([5, 1, 4, 2, 8]) == [1, 2, 4, 5, 8]\n    assert bubble_sort([]) == []"
+    },
+    {
+        "code": "def merge_sort(arr):\n    if len(arr) > 1:\n        mid = len(arr) // 2\n        left = arr[:mid]\n        right = arr[mid:]\n        merge_sort(left)\n        merge_sort(right)\n        i = j = k = 0\n        while i < len(left) and j < len(right):\n            if left[i] < right[j]:\n                arr[k] = left[i]\n                i += 1\n            else:\n                arr[k] = right[j]\n                j += 1\n            k += 1\n        while i < len(left):\n            arr[k] = left[i]\n            i += 1\n            k += 1\n        while j < len(right):\n            arr[k] = right[j]\n            j += 1\n            k += 1\n    return arr",
+        "test_case": "def test_merge_sort():\n    assert merge_sort([38, 27, 43, 3, 9, 82, 10]) == [3, 9, 10, 27, 38, 43, 82]\n    assert merge_sort([5, 1, 4, 2, 8]) == [1, 2, 4, 5, 8]\n    assert merge_sort([]) == []"
+    },
+    {
+        "code": "def binary_search(arr, target):\n    left, right = 0, len(arr) - 1\n    while left <= right:\n        mid = (left + right) // 2\n        if arr[mid] == target:\n            return mid\n        elif arr[mid] < target:\n            left = mid + 1\n        else:\n            right = mid - 1\n    return -1",
+        "test_case": "def test_binary_search():\n    assert binary_search([1, 2, 3, 4, 5, 6, 7], 4) == 3\n    assert binary_search([10, 20, 30, 40, 50], 25) == -1\n    assert binary_search([], 1) == -1"
+    },
+    {
+        "code": "def dijkstra(graph, start):\n    import heapq\n    queue = []\n    heapq.heappush(queue, (0, start))\n    distances = {node: float('inf') for node in graph}\n    distances[start] = 0\n    while queue:\n        current_distance, current_node = heapq.heappop(queue)\n        if current_distance > distances[current_node]:\n            continue\n        for neighbor, weight in graph[current_node].items():\n            distance = current_distance + weight\n            if distance < distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(queue, (distance, neighbor))\n    return distances",
+        "test_case": "def test_dijkstra():\n    graph = {\n        'A': {'B': 1, 'C': 4},\n        'B': {'A': 1, 'C': 2, 'D': 5},\n        'C': {'A': 4, 'B': 2, 'D': 1},\n        'D': {'B': 5, 'C': 1}\n    }\n    assert dijkstra(graph, 'A') == {'A': 0, 'B': 1, 'C': 3, 'D': 4}\n    assert dijkstra(graph, 'C') == {'A': 3, 'B': 2, 'C': 0, 'D': 1}"
+    },
+    {
+        "code": "def knapsack(weights, values, capacity):\n    n = len(weights)\n    dp = [[0] * (capacity + 1) for _ in range(n + 1)]\n    for i in range(1, n + 1):\n        for w in range(capacity + 1):\n            if weights[i - 1] <= w:\n                dp[i][w] = max(values[i - 1] + dp[i - 1][w - weights[i - 1]], dp[i - 1][w])\n            else:\n                dp[i][w] = dp[i - 1][w]\n    return dp[n][capacity]",
+        "test_case": "def test_knapsack():\n    assert knapsack([2, 3, 4, 5], [3, 4, 5, 6], 5) == 7\n    assert knapsack([1, 2, 3], [10, 20, 30], 5) == 50\n    assert knapsack([1, 2, 3], [10, 20, 30], 2) == 20"
+    },
+    {
+        "code": "def longest_common_subsequence(s1, s2):\n    m, n = len(s1), len(s2)\n    dp = [[0] * (n + 1) for _ in range(m + 1)]\n    for i in range(1, m + 1):\n        for j in range(1, n + 1):\n            if s1[i - 1] == s2[j - 1]:\n                dp[i][j] = 1 + dp[i - 1][j - 1]\n            else:\n                dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])\n    return dp[m][n]",
+        "test_case": "def test_longest_common_subsequence():\n    assert longest_common_subsequence('abcde', 'ace') == 3\n    assert longest_common_subsequence('abc', 'def') == 0\n    assert longest_common_subsequence('aggtab', 'gxtxayb') == 4"
+    },
+    {
+        "code": "def generate_parentheses(n):\n    def backtrack(s, left, right):\n        if len(s) == 2 * n:\n            result.append(s)\n            return\n        if left < n:\n            backtrack(s + '(', left + 1, right)\n        if right < left:\n            backtrack(s + ')', left, right + 1)\n    result = []\n    backtrack('', 0, 0)\n    return result",
+        "test_case": "def test_generate_parentheses():\n    assert generate_parentheses(1) == ['()']\n    assert generate_parentheses(2) == ['(())', '()()']\n    assert generate_parentheses(3) == ['((()))', '(()())', '(())()', '()(())', '()()()']"
     }
 
 
